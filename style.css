@@ -1,0 +1,295 @@
+/* Page Structure - Center page and define width */
+body {
+  width: 710px;
+  margin: auto;
+}
+
+/* Header Structure */
+#header {
+  /* Right align h1 */
+  text-align: right;
+  /* allow absolute positioning inside header */
+  position: relative;
+}
+
+#header > * {
+  text-align: left;
+}
+
+#header h1 {
+  display: inline-block;
+}
+
+#header #contact-info {
+  position: absolute;
+  left:30px;
+  top:20px;
+}
+
+/* Navigation list structure */
+#header #nav ul {
+  float: right;
+}
+
+#header #nav li {
+  float:left;
+}
+
+/* Content Structure */
+#content {
+  min-height: 340px;
+}
+
+/* misc structure */
+.clear {
+  clear: both;
+  display: block;
+  height: 0px;
+}
+
+
+/* Page Styling */
+body {
+  color: #000080;
+  font-weight: bold;
+  font-family: arial, sans-serif;
+}
+
+
+/* Header Styling */
+#header {
+  padding-top: 10px;
+}
+
+#header h1 {
+  color: #2e3192;
+  border-bottom: 1px solid #cbcce4;
+  font-family: "times new roman", serif;
+  font-size: 2.2em;
+  font-weight: normal;
+  margin: 0 10px;
+}
+
+#header #contact-info p {
+  font-size: 0.76em;
+  margin: 5px 0;
+}
+
+#header .contact-type {
+  font-size: 1.1em;
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+}
+
+/* Email Link */
+#header #contact-info a {
+  color: #000080;
+  text-decoration: none;
+  border-bottom: dashed 1px #dadaeb;
+}
+
+#header #contact-info a:hover {
+  color: #0066ff;
+  border-bottom: dashed 1px #0066ff;
+}
+
+/* Navigation Styling */
+#header #nav {
+  margin-top: 25px;
+  border-right: 2px solid #9999bf;
+  border-bottom: 2px solid #9999bf;
+  -webkit-box-shadow: 5px 5px 5px -1px rgba(0,0,0,0.5);
+  -moz-box-shadow: 5px 5px 5px -1px rgba(0,0,0,0.5);
+  box-shadow: 5px 5px 5px -1px rgba(0,0,0,0.5);
+}
+
+#header #nav ul {
+  margin: 0;
+  padding: 0;
+  font-size: 0.8em;
+  list-style: none;
+}
+
+#header #nav ul li {
+  border-left: 2px solid #9999bf;
+  padding: 3px 15px;
+}
+
+#header #nav ul li a {
+  color: #000080;
+  text-decoration: none;
+}
+
+#header #nav ul li a:hover {
+  color: #0066ff;
+}
+
+/* Content Styling  */
+#content {
+  margin-top: 20px;
+  background: url(./bulbs.png) no-repeat;
+  border: 2px solid #9999bf;
+  box-shadow: 3px 3px 2px 0px rgba(0,0,0,0.25);
+  padding: 15px;
+  padding-left: 395px;
+  text-align: center;
+  -webkit-box-shadow: 5px 5px 5px -1px rgba(0,0,0,0.5);
+  -moz-box-shadow: 5px 5px 5px -1px rgba(0,0,0,0.5);
+  box-shadow: 5px 5px 5px -1px rgba(0,0,0,0.5);
+}
+
+#content p {
+  margin: 0 0 15px;
+}
+
+
+/* Page Specific CSS */
+
+/* Home */
+#home #content .line {
+  display: block;
+}
+
+#home #content #txt-quote {
+  font-size: 0.8em;
+  margin-top: 20px;
+}
+
+#home #content #txt-quote .line {
+  margin: 5px;
+}
+
+#home #content #select-membership {
+  font-size: 0.8em;
+  margin-top: 50px;
+}
+
+#home #content #select-membership a {
+  display: block;
+}
+
+#home #content #select-membership a img {
+  border: none;
+}
+
+/* Services */
+#services #content #overview {
+  margin-left: 30px;
+}
+
+#services #content .service-type,
+#services #content ul {
+  font-size: 0.8em;
+  text-align: left;
+  margin-left: 50px;
+}
+
+#services #content .service-type {
+  margin-top: 30px;
+}
+
+#services #content ul {
+  padding-left: 30px;
+}
+
+/* Contact */
+#contact #content #overview {
+ font-size: 1.2em !important;
+ margin-bottom: 30px;
+}
+
+#contact #content p {
+ font-size: 0.9em;
+ margin-left: 50px;
+ margin-top: 20px;
+ text-align: left;
+}
+
+#contact #content p a {
+ color: #0033aa;
+}
+
+
+/* Screen Size Response */
+
+/* Allow Page to resize */
+@media (max-width: 710px) {
+  body {
+    width: 100%;
+  }
+  
+  #content {
+    padding-left: 56%;
+    background-size: 56%;
+  }
+  
+  #content .line {
+    display: inline !important;
+    margin: 0 !important;
+  }
+  
+  #services #content > *,
+  #contact #content > *  {
+    margin-left: 0 !important;
+  }
+}
+
+/* Remove extra padding for contact details */
+@media (max-width: 570px) {
+  #header #contact-info {
+    left: 0;
+  }
+}
+
+/* Don't display contact details, change background opacity */
+@media (max-width: 550px) {
+  #header #contact-info {
+    display: none;
+  }
+  
+  #content {
+    padding: 15px 15%;
+    text-align: center;
+    background: none;
+    position: relative;
+  }
+  
+  #content:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: -20px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.4;
+    background: url('./bulbs.png') no-repeat;
+    background-size: 56%;
+    margin-top: 20px;
+  }
+}
+
+/* Reduce Company Name */
+@media (max-width: 410px) {
+  #header h1 {
+    font-size: 1.5em;
+    position: static;
+  }
+  
+  #content {
+    min-height: 0;
+  }
+  
+  #services #content {
+    padding: 15px;
+  }
+}
+
+/* Set final static padding value */
+@media (max-width: 280px) {
+  #content {
+    padding: 15px;
+  }
+}
